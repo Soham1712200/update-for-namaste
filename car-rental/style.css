@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
+:root { --accent: #ff6b36; --dark: #111827; --gray: #f5f7fb; --surface: #ffffff; --text: #111827; }
+body { font-family: 'Montserrat', sans-serif; margin: 0; background: var(--gray); color: var(--text); min-height: 100vh; }
+a { transition: color 0.25s ease; color: #1a1a1a; }
+nav { position: sticky; top: 0; z-index: 1000; background: linear-gradient(90deg, #111827, #1f2937); padding: 1rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 10px; border-bottom: 1px solid rgba(255, 255, 255, 0.12); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.18); }
+nav h2 { margin: 0; font-size: 1.4rem; }
+nav div { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+nav a { color: #f9fafb; text-decoration: none; margin: 0; font-weight: 600; }
+nav a:hover { color: var(--accent); }
+
+.brand-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.brand-logo img {
+    height: 54px;
+    width: auto;
+    display: block;
+    max-width: 180px;
+    filter: drop-shadow(0 6px 16px rgba(0, 0, 0, 0.25));
+}
+
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.invoice-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.85rem;
+}
+
+.invoice-logo img {
+    height: 54px;
+    width: auto;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.invoice-stamp {
+    padding: 18px 28px;
+    border: 3px solid #28a745;
+    color: #28a745;
+    font-weight: 700;
+    border-radius: 9999px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    background: rgba(40, 167, 69, 0.08);
+    min-width: 140px;
+    text-align: center;
+}
+
+.hero { height: 55vh; background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1500&q=80'); background-size: cover; display: flex; align-items: center; justify-content: center; color: white; text-align: center; padding: 0 20px; }
+.hero h1 { font-size: clamp(2rem, 4vw, 4rem); line-height: 1.1; margin-bottom: 1rem; }
+.hero p { font-size: 1.05rem; max-width: 680px; margin: 0 auto 1.5rem; }
+.container { width: min(95%, 1100px); margin: 40px auto; }
+
+.car-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 25px; }
+.car-card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: transform 0.3s; display: flex; flex-direction: column; }
+.car-card:hover { transform: translateY(-5px); }
+.car-card img { width: 100%; height: 220px; object-fit: cover; }
+.car-card-body { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+.car-card-body h3 { margin-top: 0; }
+.car-card-body p { margin: 0.5rem 0; }
+
+.btn { background: var(--accent); color: white; padding: 12px 18px; border: none; border-radius: 8px; cursor: pointer; text-decoration: none; display: inline-flex; align-items: center; justify-content: center; }
+.btn:hover { opacity: 0.95; }
+form { background: white; padding: 30px; border-radius: 16px; max-width: 700px; margin: 0 auto; box-shadow: 0 4px 20px rgba(0,0,0,0.1); }
+input, select, textarea { width: 100%; padding: 14px; margin: 10px 0 18px; border: 1px solid #ddd; border-radius: 10px; box-sizing: border-box; font-size: 1rem; }
+input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(255,77,77,0.12); }
+
+.price-summary { margin: 20px 0; padding: 18px; background: #f0f7ff; border-left: 6px solid #ff4d4d; border-radius: 10px; }
+.summary-box, .invoice-box { background: white; padding: 30px; border-radius: 16px; border: 1px solid #ececec; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+.invoice-header { display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.invoice-header h1 { margin: 0; }
+.invoice-stamp { padding: 16px 24px; border: 2px solid #28a745; color: #28a745; font-weight: 700; border-radius: 12px; letter-spacing: 1px; }
+.invoice-details { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; margin-top: 30px; }
+.invoice-footer { border-top: 1px solid #eee; padding-top: 20px; margin-top: 30px; text-align: center; color: #555; }
+
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+th, td { padding: 15px; border-bottom: 1px solid #eee; text-align: left; }
+thead th { background: #1a1a1a; color: white; }
+
+.form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 15px; }
+
+@media (max-width: 900px) {
+    table, thead, tbody, th, td, tr { display: block; }
+    thead { display: none; }
+    tr { margin-bottom: 16px; background: white; border-radius: 12px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); padding: 12px; }
+    td { display: flex; justify-content: space-between; padding: 12px 10px; border-bottom: none; }
+    td::before { content: attr(data-label); font-weight: 700; color: #555; margin-right: 10px; width: 40%; }
+    nav { padding: 1rem 3%; }
+    .container { margin: 30px auto; }
+    .invoice-details { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    nav { justify-content: center; text-align: center; }
+    nav div { justify-content: center; }
+    .hero { height: 45vh; }
+    .car-card img { height: 180px; }
+    form { padding: 24px; }
+    .form-grid { grid-template-columns: 1fr; }
+    .price-summary { padding: 16px; }
+}
+
+@media (max-width: 540px) {
+    nav { padding: 1rem 2%; }
+    .hero { height: 40vh; }
+    .container { width: 95%; margin: 20px auto; }
+    .btn { width: 100%; }
+    input, select, textarea { font-size: 0.95rem; }
+    nav a { font-size: 0.95rem; }
+}
